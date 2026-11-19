@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinav Shrinivas Janawade — AI Engineer & Data Analyst Portfolio</title>
+
+  <meta name="description"
+    content="Portfolio of Abhinav Shrinivas Janawade — Aspiring Data Analyst & AI Engineer specializing in RAG architectures, Deep Learning Computer Vision, and scalable data systems.">
+  <meta name="keywords"
+    content="Abhinav Janawade, Data Science, AI Engineer, Portfolio, RAG, Computer Vision, Python, Machine Learning">
+  <meta name="author" content="Abhinav Shrinivas Janawade">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abhinav Shrinivas Janawade — AI & Data Portfolio">
+  <meta property="og:description"
+    content="Explore production AI, RAG systems, and Computer Vision architectures crafted by Abhinav Shrinivas Janawade.">
+  <meta property="og:image" content="assets/images/abhinav.jpeg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ============================================================== -->
+  <!-- 00 // INACIO NAKITI ENTRY GATEWAY SCREEN                       -->
+  <!-- ============================================================== -->
+  <div id="gateway-entry" class="gateway-overlay">
+    <div class="gateway-top">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="pulse-dot"></span>
+        <span>ABHINAV SHRINIVAS JANAWADE // PORTFOLIO GATEWAY</span>
+      </div>
+      <div>
+        <span>NIPANI,KARNATAKA, INDIA (IST)</span>
+      </div>
+    </div>
+
+    <div class="gateway-center">
+      <div class="gateway-question">INITIALIZE EXPERIENCE</div>
+      <h1 class="gateway-heading">How would you like to meet me?</h1>
+
+      <div class="gateway-cards-grid">
+        <!-- Option 1: The Site -->
+        <div class="gateway-card" onclick="selectGatewayMode('site')">
+          <span class="gateway-card-num">01 // THE SITE</span>
+          <h2 class="gateway-card-title">Explore at your pace</h2>
+          <p class="gateway-card-desc">
+            Direct access to production AI architectures, filterable project case studies, interactive model sandboxes,
+            and full technical specifications.
+          </p>
+          <div class="gateway-card-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v8M8 12h8" />
+            </svg>
+            <span>Interactive Grid • Fast Track</span>
+          </div>
+        </div>
+
+        <!-- Option 2: The Story -->
+        <div class="gateway-card" onclick="selectGatewayMode('story')">
+          <span class="gateway-card-num">02 // THE STORY</span>
+          <h2 class="gateway-card-title">The narrative journey</h2>
+          <p class="gateway-card-desc">
+            A chronological immersive walk-through from foundational mathematical sciences in Belagavi to competitive
+            hackathons, RAG architectures, and computer vision systems.
+          </p>
+          <div class="gateway-card-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            <span>Storyline • Audio Synth • Milestones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gateway-bottom">
+      <button class="gateway-skip-btn" onclick="selectGatewayMode('site')">
+        <span>Skip Directly to Portfolio Grid</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <div>
+        <span>SOUND AVAILABLE VIA TOP TOGGLE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- TOP STATUS BAR -->
+  <header class="top-status-bar">
+    <div class="status-left">
+      <div class="status-pulse">
+        <span class="pulse-dot"></span>
+        <span>STATUS: AVAILABLE FOR DATA SCIENCE & AI ROLES</span>
+      </div>
+    </div>
+
+    <div class="status-center">
+      <!-- Dual Mode Experience Switcher -->
+      <div class="mode-toggle-group">
+        <button id="btn-mode-site" class="mode-btn active" title="Standard Portfolio View">01 // THE SITE</button>
+        <button id="btn-mode-story" class="mode-btn" title="Interactive Story Experience">02 // THE STORY</button>
+      </div>
+    </div>
+
+    <div class="status-right">
+      <span id="ist-clock">--:--:-- IST</span>
+      <!-- Web Audio Ambient Sound Toggle -->
+      <button id="sound-toggle-btn" class="sound-toggle-btn" title="Toggle Generative Ambient Sound">
+        <span class="waveform">
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+        </span>
+        <span class="sound-status-text">SOUND: OFF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PRIMARY NAVIGATION -->
+  <nav class="main-nav">
+    <a href="#" class="brand-logo">
+      <span>ABHINAV JANAWADE</span>
+      <span class="tag">AI / DS</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about"><span class="nav-idx">01</span> About</a></li>
+      <li><a href="#projects"><span class="nav-idx">02</span> Projects</a></li>
+      <li><a href="#sandbox-section"><span class="nav-idx">03</span> Live Sandbox</a></li>
+      <li><a href="#skills"><span class="nav-idx">04</span> Stack</a></li>
+      <li><a href="#timeline"><span class="nav-idx">05</span> Journey</a></li>
+      <li><a href="#certificates"><span class="nav-idx">06</span> Honors</a></li>
+      <li><a href="#contact"><span class="nav-idx">07</span> Contact</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <a href="assets/Abhinav_Janawade_Resume.pdf" download="Abhinav_Janawade_Resume.pdf" class="nav-cta-btn"
+        target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+        </svg>
+        <span>Resume</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================== -->
+  <!-- 01 // MAIN SITE VIEW (DEFAULT)                                 -->
+  <!-- ============================================================== -->
+  <main id="site-view">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Hero Text -->
+          <div class="hero-content">
+            <div class="hero-meta-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <span>DATA SCIENCE & AI ARCHITECTURE // BELAGAVI & MANGALORE</span>
+            </div>
+
+            <h1 class="hero-title">
+              Engineering <span class="highlight-text">Intelligent Systems</span> & Data-Driven Insights.
+            </h1>
+
+            <p class="hero-subtitle">
+              Hi, I'm <strong>Abhinav Shrinivas Janawade</strong>. An aspiring Data Analyst and AI Engineer pursuing
+              B.E. in Computer Science & Engineering (Data Science). I build production-grade
+              <strong>Retrieval-Augmented Generation (RAG)</strong> platforms, <strong>Computer Vision diagnostic
+                pipelines</strong>, and high-performance analytical systems.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">
+                <span>View Selected Works</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17l9.2-9.2M17 17V8H8" />
+                </svg>
+              </a>
+
+              <a href="#sandbox-section" class="btn-secondary">
+                <span>Live AI Sandbox</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </a>
+
+              <button id="btn-physics-trigger" class="btn-physics-trigger" title="Launch Zero-Gravity Physics Arena">
+                <span>Break The Page (Zero-G)</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </button>
+
+              <button id="hero-story-cta" class="btn-story">
+                <span>The Story Mode</span>
+              </button>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="hero-stats-row">
+              <div class="stat-item">
+                <div class="stat-num">8.5<span style="font-size: 1rem; color: var(--accent-cyan);">/10</span></div>
+                <div class="stat-label">B.E. Data Science CGPA</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">10<span style="font-size: 1rem; color: var(--accent-cyan);">+</span></div>
+                <div class="stat-label">Engineered Systems</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">04<span style="font-size: 1rem; color: var(--accent-cyan);">+</span></div>
+                <div class="stat-label">Hackathons & Honors</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image Card (Custom User Image with 3D Tilt) -->
+          <div class="hero-image-wrapper">
+            <div class="portrait-frame">
+              <span class="portrait-corner tl"></span>
+              <span class="portrait-corner tr"></span>
+              <span class="portrait-corner bl"></span>
+              <span class="portrait-corner br"></span>
+
+              <div class="portrait-inner">
+                <div class="portrait-scanline"></div>
+                <img src="assets/images/abhinav.jpeg" alt="Abhinav Shrinivas Janawade">
+              </div>
+
+              <div class="portrait-footer">
+                <div class="portrait-status">
+                  <span class="pulse-dot"></span>
+                  <span>AI / DATA ENGINE</span>
+                </div>
+                <span>AIET MIJAR // 2024–2028</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01: ABOUT PHILOSOPHY -->
+    <section id="about" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-meta">
+            <span>[ 01 ]</span>
+            <span>PHILOSOPHY & PROFILE</span>
+          </div>
+          <h2 class="section-title">Bridging Raw Datasets with Actionable Real-World Intelligence</h2>
+          <p class="section-desc">
+            I specialize in unlocking high-dimensional value from messy, real-world data. From building trilingual
+            healthcare OCR pipelines to training explainable deep learning models with Grad-CAM heatmaps, my engineering
+            focuses on verifiable truth and low-latency performance.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem;">
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                </svg>
+              </div>
+              <h3 class="skill-category-title">Semantic RAG & Vector Search</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+              Deep experience in chunking strategies, embeddings (<code
+                style="color: var(--accent-cyan); font-family: var(--font-mono);">all-MiniLM-L6-v2</code>), vector
+              similarity search, and automated ground-truth citation verification engines that prevent LLM
+              hallucinations.
+            </p>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                </svg>
+              </div>
+              <h3 class="skill-category-title">Explainable Computer Vision</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+              Trained multi-crop disease classification CNNs using TensorFlow/Keras and integrated Grad-CAM gradient
+              backpropagation to generate visual heatmaps verifying model attention for agronomists and farmers.
+            </p>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <h3 class="skill-category-title">Core Systems & Data Engineering</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+              Production backend engineering with FastAPI, Node.js, PostgreSQL, and MySQL. Experienced in geospatial
+              indexing (Haversine clustering), candidate blocking for entity resolution, and relational transaction
+              integrity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: FEATURED PROJECTS -->
+    <section id="projects" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-meta">
+            <span>[ 02 ]</span>
+            <span>SYSTEMS & CASE STUDIES</span>
+          </div>
+          <h2 class="section-title">Engineered Products & Research Projects</h2>
+          <p class="section-desc">
+            Explore 10 production systems spanning Generative AI, Computer Vision, Entity Resolution, and Full-Stack
+            Architectures. Hover cards for 3D tilt and click for the deep-dive architectural specifications.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="project-filter-bar">
+          <button class="filter-btn active" data-filter="all">ALL WORKS (10)</button>
+          <button class="filter-btn" data-filter="ai-ml">AI & MACHINE LEARNING</button>
+          <button class="filter-btn" data-filter="data-science">DATA SCIENCE & ANALYTICS</button>
+          <button class="filter-btn" data-filter="systems">SYSTEMS & FULL-STACK</button>
+          <button class="filter-btn" data-filter="cybersecurity">CYBERSECURITY</button>
+        </div>
+
+        <!-- Dynamic Grid populated by JS with 3D Tilt -->
+        <div id="projects-grid-container" class="projects-grid">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: LIVE ENGINEERING SANDBOX & DEMOS (NEW) -->
+    <section id="sandbox-section" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-meta">
+            <span>[ 03 ]</span>
+            <span>LIVE INTERACTIVE PLAYGROUND</span>
+          </div>
+          <h2 class="section-title">Hands-On Model & System Sandboxes</h2>
+          <p class="section-desc">
+            Interact directly with live heuristic and neural logic powering Abhinav's systems. Select a demo below to
+            test threat scoring, RAG vector retrieval, or Grad-CAM attention.
+          </p>
+        </div>
+
+        <div class="sandbox-card">
+          <!-- Navigation Tabs -->
+          <div class="sandbox-nav-tabs">
+            <button class="sandbox-tab-btn active" data-target="tab-trustlens">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span>01 // TrustLens Threat Scanner</span>
+            </button>
+            <button class="sandbox-tab-btn" data-target="tab-rag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <span>02 // RAG Vector Search Simulator</span>
+            </button>
+            <button class="sandbox-tab-btn" data-target="tab-gradcam">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19 12a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span>03 // Grad-CAM Heatmap Inspector</span>
+            </button>
+          </div>
+
+          <!-- TAB 1: TrustLens Scanner -->
+          <div id="tab-trustlens" class="sandbox-tab-content active">
+            <div class="threat-scanner-box">
+              <div class="threat-input-group">
+                <label style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">ENTER
+                  SUSPICIOUS DOMAIN OR MESSAGE TEXT:</label>
+                <input type="text" id="threat-input" class="form-input" value="paypa1-security-verification.com"
+                  placeholder="e.g. login-account-update.net">
+
+                <div style="margin-top: 0.5rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">PRESET TEST
+                    LURES:</span>
+                  <div class="preset-pills-row">
+                    <span class="preset-pill" data-val="paypa1-security-verification.com">paypa1-security.com
+                      (Typosquat)</span>
+                    <span class="preset-pill" data-val="Urgent: Wire transfer invoice overdue payment 24h">Urgent
+                      Invoice Wire (Social Eng)</span>
+                    <span class="preset-pill" data-val="https://github.com/abhinavjanawade2242-dev">github.com (Safe
+                      Domain)</span>
+                  </div>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <button id="btn-scan-threat" class="btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+                    <span>Analyze Threat Heuristics</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="threat-result-panel">
+                <div>
+                  <div style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">ANALYSIS
+                    TELEMETRY</div>
+                  <div id="threat-score-text" style="margin-top: 0.5rem; font-size: 1rem;">
+                    RISK SCORE: <span style="color: #ef4444; font-weight: 800; font-size: 1.25rem;">94/100
+                      (CRITICAL)</span>
+                  </div>
+
+                  <div class="threat-meter">
+                    <div id="threat-meter-fill" class="threat-meter-fill" style="width: 94%; background: #ef4444;">
+                    </div>
+                  </div>
+
+                  <div id="threat-analysis-text"
+                    style="font-size: 0.85rem; line-height: 1.6; color: #d1d5db; margin-top: 0.5rem;">
+                    CRITICAL RISK: Homoglyph typosquatting ('1' substituted for 'l'), deceptive reverse proxy signature,
+                    and credential-harvesting endpoint.
+                  </div>
+                </div>
+
+                <div
+                  style="margin-top: 1.25rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.75rem;">
+                  Engineered for TrustLens Anti-Phishing Cyber Defense Engine.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: RAG Simulator -->
+          <div id="tab-rag" class="sandbox-tab-content">
+            <div class="rag-sim-box">
+              <div>
+                <label style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">SELECT
+                  TARGET ARCHITECTURE QUERY:</label>
+                <select id="rag-query-select" class="form-input"
+                  style="width: 100%; margin-top: 0.5rem; cursor: pointer;">
+                  <option value="entity">How does candidate blocking reduce O(N^2) complexity in entity matching?
+                  </option>
+                  <option value="gradcam">How does Grad-CAM compute heatmaps for multi-crop leaf diagnosis?</option>
+                  <option value="reportsaathi">What are the trilingual clinical safety guardrails in ReportSaathi?
+                  </option>
+                </select>
+
+                <div style="margin-top: 1.25rem;">
+                  <button id="btn-run-rag" class="btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+                    <span>Execute Semantic Vector Pipeline</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="rag-steps-list">
+                  <div class="rag-step-item"><span>01</span> Chunk Tokenization & Normalization</div>
+                  <div class="rag-step-item"><span>02</span> all-MiniLM-L6-v2 384-Dim Embedding</div>
+                  <div class="rag-step-item"><span>03</span> Cosine Similarity Indexing (>0.85)</div>
+                  <div class="rag-step-item"><span>04</span> Ground-Truth Evidence Verification</div>
+                </div>
+              </div>
+
+              <div>
+                <div id="rag-output-stream" class="rag-output-stream">
+                  <div style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.8rem;">
+                    Ready to stream. Click 'Execute Semantic Vector Pipeline' to trace execution across 25,000+ vector
+                    chunks.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: Crop Disease Grad-CAM Visualizer -->
+          <div id="tab-gradcam" class="sandbox-tab-content">
+            <div class="gradcam-sim-box">
+              <div class="leaf-viewer">
+                <div class="leaf-image-base">
+                  <svg width="160" height="160" viewBox="0 0 24 24" fill="#4ade80" opacity="0.85">
+                    <path
+                      d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.5 4.5 8.2C6.8 17 9 14.5 12 14.5s5.2 2.5 5.5 5.7c2.7-1.7 4.5-4.7 4.5-8.2 0-5.5-4.5-10-10-10z" />
+                  </svg>
+                </div>
+                <div id="gradcam-overlay" class="gradcam-heatmap-overlay"></div>
+                <div
+                  style="position: absolute; bottom: 10px; left: 10px; font-family: var(--font-mono); font-size: 0.75rem; background: rgba(0,0,0,0.7); padding: 0.2rem 0.6rem; border-radius: 4px; color: #fff;">
+                  SAMPLE: PADDY_LEAF_BLAST_0492.JPG
+                </div>
+              </div>
+
+              <div>
+                <div
+                  style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">
+                  CNN INFERENCE: TENSORFLOW / KERAS
+                </div>
+                <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">Paddy Blast (Magnaporthe oryzae)
+                </h3>
+
+                <div style="margin: 1.25rem 0;">
+                  <button id="btn-toggle-gradcam" class="btn-secondary"
+                    style="font-size: 0.85rem; padding: 0.6rem 1.25rem;">
+                    SHOW GRAD-CAM HEATMAP
+                  </button>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <div
+                    style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 0.35rem;">
+                    <span>CONFIDENCE PROBABILITY:</span>
+                    <span id="conf-value-text" style="color: var(--accent-cyan); font-weight: 700;">96.4%</span>
+                  </div>
+                  <input type="range" id="conf-slider" min="50" max="99" value="96"
+                    style="width: 100%; cursor: pointer;">
+                </div>
+
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; line-height: 1.55;">
+                  The Grad-CAM backpropagation isolates the gradient flow from the final convolutional feature maps,
+                  visually proving the neural network targeted the spindle-shaped necrotic lesions rather than
+                  irrelevant background pixels.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04: TECHNICAL ARCHITECTURE & SKILLS -->
+    <section id="skills" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-meta">
+            <span>[ 04 ]</span>
+            <span>TECHNICAL PROFICIENCY</span>
+          </div>
+          <h2 class="section-title">Architectural Stack & Core Competencies</h2>
+          <p class="section-desc">
+            Disciplined tools and libraries leveraged across machine learning pipelines, inference microservices, and
+            analytical dashboards. Click any pill to highlight or test in terminal.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- AI & ML -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8z" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3 class="skill-category-title">AI & Deep Learning</h3>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill">RAG Architectures</span>
+              <span class="skill-pill">TensorFlow & Keras</span>
+              <span class="skill-pill">CNNs & Transfer Learning</span>
+              <span class="skill-pill">Grad-CAM Explainability</span>
+              <span class="skill-pill">Sentence-Transformers</span>
+              <span class="skill-pill">Vector Embeddings</span>
+              <span class="skill-pill">Cosine Similarity</span>
+              <span class="skill-pill">Ollama & Llama 3.2</span>
+              <span class="skill-pill">Google Gemini API</span>
+              <span class="skill-pill">OCR Systems</span>
+            </div>
+          </div>
+
+          <!-- Data Analytics -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 20V10M12 20V4M6 20v-6" />
+                </svg>
+              </div>
+              <h3 class="skill-category-title">Data Analytics & Viz</h3>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill">Python (Data Science)</span>
+              <span class="skill-pill">Pandas DataFrames</span>
+              <span class="skill-pill">NumPy Operations</span>
+              <span class="skill-pill">Scikit-Learn</span>
+              <span class="skill-pill">Microsoft Excel Advanced</span>
+              <span class="skill-pill">Tableau Desktop</span>
+              <span class="skill-pill">Power BI</span>
+              <span class="skill-pill">Matplotlib & Seaborn</span>
+              <span class="skill-pill">Plotly Interactive</span>
+              <span class="skill-pill">Entity Resolution</span>
+            </div>
+          </div>
+
+          <!-- Backend & Database -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <h3 class="skill-category-title">Backend & Databases</h3>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill">FastAPI (Python)</span>
+              <span class="skill-pill">MySQL Relational</span>
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">MongoDB NoSQL</span>
+              <span class="skill-pill">Node.js & Express</span>
+              <span class="skill-pill">C Programming</span>
+              <span class="skill-pill">RESTful API Design</span>
+              <span class="skill-pill">JWT & Role Auth</span>
+              <span class="skill-pill">Streamlit Framework</span>
+              <span class="skill-pill">Next.js 14 Basics</span>
+            </div>
+          </div>
+
+          <!-- Engineering & DevOps -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <h3 class="skill-category-title">Engineering & Tools</h3>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill">Git Version Control</span>
+              <span class="skill-pill">GitHub Collaboration</span>
+              <span class="skill-pill">Task Automation (MCP Server)</span>
+              <span class="skill-pill">VS Code Architecture</span>
+              <span class="skill-pill">Jupyter Notebooks</span>
+              <span class="skill-pill">JSONL Streaming</span>
+              <span class="skill-pill">Haversine Distance Engine</span>
+              <span class="skill-pill">Security Heuristics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE TERMINAL EASTER EGG -->
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <span>abhinav@portfolio-core:~ (zsh)</span>
+            <span style="font-size: 0.7rem; color: var(--accent-cyan);">TRY: help, skills, breakpage, sandbox, sudo hire
+              abhinav</span>
+          </div>
+          <div class="terminal-body" id="terminal-output">
+            <div class="terminal-line" style="color: var(--text-secondary);">
+              Interactive Shell Initialized. Type <span style="color: var(--accent-cyan);">'help'</span> for a list of
+              shell commands or <span style="color: var(--accent-cyan);">'breakpage'</span> for zero-gravity physics.
+            </div>
+          </div>
+          <div style="padding: 0.5rem 1.25rem 1rem; background: #090c12;">
+            <div class="terminal-input-wrapper">
+              <span class="terminal-prompt">visitor@abhinav:~$</span>
+              <input type="text" id="terminal-input" class="terminal-input"
+                placeholder="Type command here and press Enter..." autocomplete="off">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 05: JOURNEY & EDUCATION -->
+    <section id="timeline" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-meta">
+            <span>[ 05 ]</span>
+            <span>ACADEMIC FOUNDATION & TRACK</span>
+          </div>
+          <h2 class="section-title">Education & Milestones</h2>
+          <p class="section-desc">
+            Rigorous academic achievements combined with rapid sprint-based practical product engineering.
+          </p>
+        </div>
+
+        <div class="timeline-section-grid">
+          <!-- Left: Education -->
+          <div>
+            <h3 class="timeline-column-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+              <span>Academic Track</span>
+            </h3>
+
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">2024 — PRESENT (PURSUING)</div>
+                <h4 class="timeline-title">B.E. in Computer Science & Engineering (Data Science)</h4>
+                <div class="timeline-subtitle">Alva's Institute of Engineering and Technology, Mijar, Mangalore</div>
+                <p class="timeline-desc">Specialized in Machine Learning, Statistical Inference, Database Systems,
+                  Computer Vision, and RAG Architecture.</p>
+                <span class="timeline-meta-chip">CGPA: 8.5 / 10.0</span>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">2022 — 2024</div>
+                <h4 class="timeline-title">Pre-University Course (Science)</h4>
+                <div class="timeline-subtitle">Mahesh PU College, Belagavi</div>
+                <p class="timeline-desc">Intensive foundation in Physics, Chemistry, Mathematics, and Computer Science.
+                </p>
+                <span class="timeline-meta-chip">Score: 91.33% Distinction</span>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">2022</div>
+                <h4 class="timeline-title">Secondary School Leaving Certificate (SSLC)</h4>
+                <div class="timeline-subtitle">Chaitanya Ashram English Medium School, Naganur</div>
+                <p class="timeline-desc">Graduated with top academic honors and strong mathematical orientation.</p>
+                <span class="timeline-meta-chip">Score: 93.60% High Distinction</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Engineering Experience -->
+          <div>
+            <h3 class="timeline-column-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+              <span>Key Engineering Phases</span>
+            </h3>
+
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">NOV 2026</div>
+                <h4 class="timeline-title">Technovate 2.0 & Innovexa 1.0 Hackathons</h4>
+                <div class="timeline-subtitle">Dept. of AIML & Dept. of CSE (Data Science), AIET</div>
+                <p class="timeline-desc">Led core system backend and threat intelligence development for CivicSense and
+                  TrustLens under tight 24-48hr competitive constraints.</p>
+                <span class="timeline-meta-chip">Multi-Hackathon Recognition</span>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">SEP 2026</div>
+                <h4 class="timeline-title">Amazon ML Challenge Pipeline Engineer</h4>
+                <div class="timeline-subtitle">Amazon ML Hackathon</div>
+                <p class="timeline-desc">Engineered end-to-end entity deduplication and machine learning linkage
+                  pipelines for real-world business matching under severe data noise.</p>
+                <span class="timeline-meta-chip">F0.5 Metric Optimization</span>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">JUN 2026 — AUG 2026</div>
+                <h4 class="timeline-title">RAG Platform Architecture Sprint</h4>
+                <div class="timeline-subtitle">EduAI Teaching Assistant</div>
+                <p class="timeline-desc">Designed semantic vector search, dynamic quiz synthesis, and academic
+                  curriculum verification reducing teacher grading overhead.</p>
+                <span class="timeline-meta-chip">Full-Stack RAG Deployment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: HONORS, HACKATHONS & CERTIFICATES -->
+    <section id="certificates" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-meta">
+            <span>[ 06 ]</span>
+            <span>CREDENTIALS & MERIT</span>
+          </div>
+          <h2 class="section-title">Certifications & Hackathon Honors</h2>
+          <p class="section-desc">
+            Verified competitive programming hackathons, machine learning workshops, and automation credentials.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Cert 1: Technovate -->
+          <div class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-badge">HACKATHON HONORS</span>
+                <span class="cert-date">NOV 2026</span>
+              </div>
+              <h4 class="cert-name">Technovate 2.0 Hackathon</h4>
+              <p class="cert-issuer">Department of AIML, Alva's Institute of Engineering and Technology</p>
+            </div>
+            <div>
+              <button class="btn-cert-view"
+                onclick="openCertModal('Technovate 2.0 Hackathon', 'Dept. of AIML, AIET (Nov 2026)', 'assets/images/technovate_hackathon.png')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>View Certificate</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 2: Innovexa -->
+          <div class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-badge">HACKATHON HONORS</span>
+                <span class="cert-date">NOV 2026</span>
+              </div>
+              <h4 class="cert-name">Innovexa 1.0 Hackathon</h4>
+              <p class="cert-issuer">Department of CSE (Data Science), Alva's Institute of Engineering and Technology
+              </p>
+            </div>
+            <div>
+              <button class="btn-cert-view"
+                onclick="openCertModal('Innovexa 1.0 Hackathon', 'Dept. of CSE (Data Science), AIET (Nov 2026)', 'assets/images/innovexa_hackathon.jpeg')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>View Certificate</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 3: Amazon ML -->
+          <div class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-badge">NATIONAL CHALLENGE</span>
+                <span class="cert-date">SEP 2026</span>
+              </div>
+              <h4 class="cert-name">Amazon ML Hackathon</h4>
+              <p class="cert-issuer">End to End ML Pipeline to Solve Business Entity Resolution</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+              Data Cleansing • Blocking • F0.5 Optimization
+            </div>
+          </div>
+
+          <!-- Cert 4: MCP Automation -->
+          <div class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-badge">AI AUTOMATION</span>
+                <span class="cert-date">JUL 2026</span>
+              </div>
+              <h4 class="cert-name">Task Automation using MCP Server</h4>
+              <p class="cert-issuer">NxtWave Academy</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+              Model Context Protocol & Agent Tooling
+            </div>
+          </div>
+
+          <!-- Cert 5: Open Source Day -->
+          <div class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-badge">WORKSHOP</span>
+                <span class="cert-date">SEP 2026</span>
+              </div>
+              <h4 class="cert-name">Open Source Day Workshop</h4>
+              <p class="cert-issuer">Wikitech Club, AIET</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+              Collaborative Open Source Development
+            </div>
+          </div>
+
+          <!-- Cert 6: Hackathon AIML -->
+          <div class="cert-card">
+            <div>
+              <div class="cert-top">
+                <span class="cert-badge">HACKATHON</span>
+                <span class="cert-date">OCT 2025</span>
+              </div>
+              <h4 class="cert-name">AIML Hackathon</h4>
+              <p class="cert-issuer">Dept. of AIML, Alva's Institute of Engineering and Technology</p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+              Early Predictive Machine Learning Systems
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: CONTACT HUB -->
+    <section id="contact" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-meta">
+            <span>[ 07 ]</span>
+            <span>GET IN TOUCH</span>
+          </div>
+          <h2 class="section-title">Initiate Collaboration</h2>
+          <p class="section-desc">
+            Currently open for Data Science internships, Machine Learning roles, and collaborative technology products.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Links -->
+          <div class="contact-info-block">
+            <div class="contact-direct-item">
+              <span class="contact-label">DIRECT EMAIL</span>
+              <a href="mailto:abhinavjanawade2242@gmail.com" class="contact-val">
+                <span>abhinavjanawade2242@gmail.com</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17l9.2-9.2M17 17V8H8" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="contact-direct-item">
+              <span class="contact-label">CONTACT PHONE</span>
+              <a href="tel:+918618252477" class="contact-val">
+                <span>+91 86182 52477</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17l9.2-9.2M17 17V8H8" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="contact-direct-item">
+              <span class="contact-label">LOCATION</span>
+              <div style="font-size: 1.1rem; color: var(--text-primary); font-weight: 500;">
+                Belagavi / Mijar (Mangalore), Karnataka, India
+              </div>
+            </div>
+
+            <div>
+              <span class="contact-label">CONNECT ACROSS PLATFORMS</span>
+              <div class="social-links-row">
+                <a href="https://www.linkedin.com/in/abhinavjanawade/" target="_blank" rel="noopener"
+                  class="social-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                  <span>LinkedIn Profile</span>
+                </a>
+
+                <a href="https://github.com/abhinavjanawade2242-dev" target="_blank" rel="noopener" class="social-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <form id="portfolio-contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">YOUR NAME</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">YOUR EMAIL</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="s.jenkins@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">PROJECT BRIEF OR OPPORTUNITY</label>
+              <textarea id="contact-message" class="form-textarea"
+                placeholder="Tell me about your team, challenge, or project scope..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="justify-content: center; cursor: pointer; border: none;">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+
+            <div id="form-feedback"
+              style="display: none; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); text-align: center;">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            <span>© 2026 ABHINAV SHRINIVAS JANAWADE</span>
+            <span style="margin: 0 0.5rem;">//</span>
+            <span>DATA SCIENCE & AI ARCHITECTURE</span>
+          </div>
+          <div class="footer-quote">
+            "Turning complex data into verifiable truth."
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- 02 // THE STORY VIEW (Inspired by inacionakiti ?v=story)        -->
+  <!-- ============================================================== -->
+  <div id="story-view">
+    <div class="story-container">
+
+      <div style="margin-bottom: 2rem;">
+        <button id="story-back-btn" class="btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.85rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span>Return to 01 The Site</span>
+        </button>
+      </div>
+
+      <div class="story-header">
+        <span class="story-badge">02 // THE NARRATIVE JOURNEY</span>
+        <h1 class="story-title">How I Learned to Build Machines That Reason</h1>
+        <p class="story-intro">
+          A personal walk-through from mastering foundational sciences in Belagavi to engineering autonomous RAG agents
+          and computer vision models in Mangalore.
+        </p>
+      </div>
+
+      <!-- Chapter 1 -->
+      <article class="story-chapter" data-step="01">
+        <div class="chapter-year">2022 — 2024</div>
+        <h2 class="chapter-heading">The Foundation in Exact Sciences</h2>
+        <p class="chapter-body">
+          Before training deep neural networks, I honed a strict passion for mathematical rigor and algorithmic
+          deduction during my Pre-University studies at Mahesh PU College, Belagavi, graduating with a 91.33%
+          distinction. Understanding linear algebra, statistics, and calculus gave me an intuitive comprehension of
+          gradient descent and high-dimensional vector spaces.
+        </p>
+      </article>
+
+      <!-- Chapter 2 -->
+      <article class="story-chapter" data-step="02">
+        <div class="chapter-year">2024 — 2025</div>
+        <h2 class="chapter-heading">Immersion in Data Science & Relational Architecture</h2>
+        <p class="chapter-body">
+          Entering Alva's Institute of Engineering and Technology (AIET) for my Bachelor of Computer Science and
+          Engineering (Data Science), I dove into Python, C, relational modeling, and algorithmic complexity.
+          Maintaining an 8.5 CGPA, I built database-driven platforms like the Student Attendance Management System and
+          relational backend architectures.
+        </p>
+      </article>
+
+      <!-- Chapter 3 -->
+      <article class="story-chapter" data-step="03">
+        <div class="chapter-year">2026 (EARLY)</div>
+        <h2 class="chapter-heading">The RAG & LLM Revolution</h2>
+        <p class="chapter-body">
+          As Large Language Models emerged, I recognized their greatest pitfall: hallucination. In summer 2026, I
+          engineered EduAI — a complete Retrieval-Augmented Generation (RAG) assistant for schools that anchors LLM
+          answers strictly to uploaded curricula. Later, with the Wikimedia AI Research Assistant, I scaled vector
+          retrieval across 25,000+ chunks with automated evidence verification.
+        </p>
+        <div class="chapter-card">
+          <div
+            style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-bottom: 0.4rem;">
+            CORE INSIGHT</div>
+          <p style="font-size: 0.9rem; color: #e5e7eb;">"An AI system is only as reliable as its citation grounding.
+            Semantic search paired with deterministic fact-checking transforms an LLM from a toy into an enterprise
+            tool."</p>
+        </div>
+      </article>
+
+      <!-- Chapter 4 -->
+      <article class="story-chapter" data-step="04">
+        <div class="chapter-year">2026 (LATE)</div>
+        <h2 class="chapter-heading">Solving Real-World Human Problems</h2>
+        <p class="chapter-body">
+          I turned to Computer Vision and Healthcare. Developing the Multi-Crop Disease Diagnosis System for coastal
+          Karnataka farmers (paddy, coconut, arecanut) using Grad-CAM heatmaps proved that deep learning must be
+          explainable. Soon after, I engineered ReportSaathi to translate laboratory medical reports into simple
+          English, Hindi, and Kannada.
+        </p>
+        <div class="chapter-card">
+          <div
+            style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-blue); margin-bottom: 0.4rem;">
+            HACKATHONS & RECOGNITION</div>
+          <p style="font-size: 0.9rem; color: #e5e7eb;">Won honors at Technovate 2.0 and Innovexa 1.0 Hackathons,
+            tackled the Amazon ML Challenge for Business Entity Resolution, and continuously deploy code that makes
+            technology accessible to everyone.</p>
+        </div>
+      </article>
+
+      <!-- Chapter 5 -->
+      <article class="story-chapter" data-step="05">
+        <div class="chapter-year">THE HORIZON</div>
+        <h2 class="chapter-heading">What Lies Ahead</h2>
+        <p class="chapter-body">
+          I am eager to contribute to forward-thinking engineering teams, high-throughput data platforms, and applied AI
+          labs. Whether building agentic workflows, scalable data pipelines, or fine-tuning neural architectures, I
+          bring technical curiosity, speed, and disciplined execution.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="#contact" onclick="setViewMode('site')" class="btn-primary">
+            <span>Let's Build Together</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- 03 // PHYSICS ARENA CANVAS OVERLAY ("BREAK THE PAGE")          -->
+  <!-- ============================================================== -->
+  <div id="physics-arena-overlay">
+    <div class="physics-header">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span class="pulse-dot"></span>
+        <span style="color: var(--accent-purple); font-weight: 700;">ZERO-GRAVITY PHYSICS ARENA // BREAK THE PAGE</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button id="physics-blast-btn" class="btn-secondary"
+          style="font-size: 0.75rem; padding: 0.35rem 0.8rem; border-color: var(--accent-purple); color: var(--accent-purple);">
+          ⚡ Explosive Force
+        </button>
+        <button id="physics-close-btn" class="btn-primary" style="font-size: 0.75rem; padding: 0.35rem 0.8rem;">
+          Close Arena ✕
+        </button>
+      </div>
+    </div>
+    <canvas id="physics-canvas"></canvas>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- GLOBAL MODAL (SPECIFICATIONS & CERTIFICATES)                   -->
+  <!-- ============================================================== -->
+  <div id="global-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div id="modal-dynamic-body" class="modal-content">
+        <!-- Content injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Client Script -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
